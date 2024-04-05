@@ -1,0 +1,10 @@
+//file root hỗ trợ cài đặt sequelize-cli do
+const path = require('path');
+
+module.exports = {
+    'config': path.resolve('./src/config', 'config.json'),// làm sao kết nối đến database
+    'migrations-path': path.resolve('./src', 'migrations'), //tạo bảng trong database
+    'models-path': path.resolve('./src', 'models'),//tạo model trong mohinh MVC
+    'seeders-path': path.resolve('./src','seeder'),
+
+}
