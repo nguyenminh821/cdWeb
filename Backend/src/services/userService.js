@@ -1,6 +1,3 @@
-//import { where } from "sequelize";
-//import { where } from "sequelize";
-//import { raw } from "body-parser";
 import db from "../models/index";
 import bcrypt from 'bcryptjs';
 
@@ -15,13 +12,9 @@ let handleUserLogin = (email,password) => {
             if(isExist){
                 //user is alrealy exist
                 //copmpare password
-                let user =await db.User.findOne({
+                let user = await db.User.findOne({
                     attributes:['email','roleId','password'],
                     where: {email: email}, 
-                    //attributes :{
-                    //include: ['email','roleId'],
-                   // exclude:['password']
-                    //}
                     raw: true
                 });
                 if(user){
@@ -36,8 +29,10 @@ let handleUserLogin = (email,password) => {
                     if(check){
                         userData.errCode=0;
                         userData.errMessage = 'Ok';
+                        
                         delete user.password;
                         userData.user =user;
+                        
                     }else{
                         userData.errCode=3;
                         userData.errMessage ='wrong password'
@@ -62,15 +57,7 @@ let handleUserLogin = (email,password) => {
     })
 }
 
-// let compareUserPassword = () => {
-//     return new Promise((resolve,reject)=>{
-//         try{
 
-//         }catch(e){
-//             reject(e);
-//         }
-//     })
-// }
 
 
 let checkUserEmail = (userEmail) =>{
