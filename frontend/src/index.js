@@ -10,12 +10,14 @@ import IntlProviderWrapper from "./hoc/IntlProviderWrapper";
 
 import { Provider } from 'react-redux';
 import reduxStore, { persistor } from './redux';
+//reduxStore: nơi lưu trữ thông tin của Redux
+//persistor: giúp lưu trữ 1 biến của Redux như 1 biến của storist
 
 const renderApp = () => {
     ReactDOM.render(
         <Provider store={reduxStore}>
             <IntlProviderWrapper>
-                <App persistor={persistor}/>
+                <App persistor={persistor} />
             </IntlProviderWrapper>
         </Provider>,
         document.getElementById('root')
