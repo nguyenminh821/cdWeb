@@ -18,10 +18,10 @@ class About extends Component {
                         <iframe width="100%" height="400px"
                             src="https://www.youtube.com/embed/RL7HAyXWql4"
                             title="[UMC 360 độ] Đăng ký khám bệnh và thanh toán thông minh: Thuận tiện – An toàn – Tiết kiệm thời gian"
-                            frameborder="0"
+                            frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen>
+                            allowFullScreen>
                         </iframe>
                     </div>
                     <div className='content-right'>
