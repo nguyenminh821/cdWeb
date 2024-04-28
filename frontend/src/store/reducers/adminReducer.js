@@ -30,7 +30,7 @@ const adminReducer = (state = initialState, action) => {
                 ...state,
                
             }
-            case actionTypes.FETCH_GENDER_FAIDED:
+            case actionTypes.FETCH_GENDER_FAILED:
                // console.log('hoi di',action)
                 //let state = {...state};
                 
@@ -53,7 +53,7 @@ const adminReducer = (state = initialState, action) => {
              ...state,
             
          }
-         case actionTypes.FETCH_POSITION_FAIDED:
+         case actionTypes.FETCH_POSITION_FAILED:
             // console.log('hoi di',action)
              //let state = {...state};
              
@@ -76,7 +76,7 @@ const adminReducer = (state = initialState, action) => {
           ...state,
          
       }
-      case actionTypes.FETCH_ROLE_FAIDED:
+      case actionTypes.FETCH_ROLE_FAILED:
          // console.log('hoi di',action)
           //let state = {...state};
           
