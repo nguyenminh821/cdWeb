@@ -2,12 +2,13 @@ import {combineReducers} from 'redux';
 import { connectRouter } from 'connected-react-router';
 
 import appReducer from "./appReducer";
-import adminReducer from "./adminReducer";
+//import adminReducer from "./adminReducer";
 import userReducer from "./userReducer";
-
+import adminReducer from'./adminReducer';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
+import { adminMenu } from '../../containers/Header/menuApp';
 
 const persistCommonConfig = {
     storage: storage,
@@ -37,5 +38,6 @@ export default (history) => combineReducers({
     //admin: persistReducer(adminPersistConfig, adminReducer),
     user: persistReducer(userPersistConfig, userReducer),
    // user: userReducer,
-    app: persistReducer(appPersistConfig, appReducer)
+    app: persistReducer(appPersistConfig, appReducer),
+    admin: adminReducer
 })
