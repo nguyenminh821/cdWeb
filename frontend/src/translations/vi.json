@@ -22,48 +22,35 @@
         "child6": "Khám nha khoa",
         "search": "Tìm chuyên khoa khám bệnh"
     },
-
-    
-    
-
-
     "menu": {
-       
-        
         "admin": {
             "manage-user": "Người dùng",
-            "manage-doctor":"quản lí bác sĩ",
-            "manage-admin":"quản lí admin",
-            "crud":"CRUD user",
-            "crud-redux":"CRUD Redux",
-            "clinic":"Phòng khám",
-            "manage-clinic":"Quản lí phòng khám",
-            "specialty":"Chuyên khoa",
-            "manage-specialty":"Quản lí chuyên khoa",
-            "handbook":"Cẩm nang",
-            "manage-handbook":"Quản lí cẩm nang"
-
-            
-
+            "manage-doctor": "quản lí bác sĩ",
+            "manage-admin": "quản lí admin",
+            "crud": "CRUD user",
+            "crud-redux": "CRUD Redux",
+            "clinic": "Phòng khám",
+            "manage-clinic": "Quản lí phòng khám",
+            "specialty": "Chuyên khoa",
+            "manage-specialty": "Quản lí chuyên khoa",
+            "handbook": "Cẩm nang",
+            "manage-handbook": "Quản lí cẩm nang"
         }
     },
-    "manage-user":{
-        "title":"Quản lí người dùng",
-        "add":"Thêm mới người dùng",
-        "email":"Email",
-        "password":"Mật khẩu",
-        "first-name":"Tên",
-        "last-name":"Họ",
-        "phone-number":" Số điện thoại",
-        "address":"Địa chỉ",
-        "gender":"Giới tính",
-        "position":"Chức danh",
-        "role":"vai trò",
-        "image":"Ảnh",
-        "save":"Lưu user",
-        "edit":"Lưu thay đổi"
-
+    "manage-user": {
+        "title": "Quản lí người dùng",
+        "add": "Thêm mới người dùng",
+        "email": "Email",
+        "password": "Mật khẩu",
+        "first-name": "Tên",
+        "last-name": "Họ",
+        "phone-number": " Số điện thoại",
+        "address": "Địa chỉ",
+        "gender": "Giới tính",
+        "position": "Chức danh",
+        "role": "Vai trò",
+        "image": "Ảnh",
+        "save": "Lưu user",
+        "edit": "Lưu thay đổi"
     }
-    
-   
 }

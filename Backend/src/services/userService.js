@@ -25,7 +25,7 @@ let handleUserLogin = (email, password) => {
                 //user is alrealy exist
                 //copmpare password
                 let user = await db.User.findOne({
-                    attributes: ['email', 'roleId', 'password','firstName','lastName'],
+                    attributes: ['email', 'roleId', 'password', 'firstName', 'lastName'],
                     where: { email: email },
                     raw: true
                 });
@@ -127,22 +127,23 @@ let createNewUser = (data) => {
                     errCode: 1,
                     errMessage: 'Your email is already in used.Plz try another email!'
                 })
-            }else{
+            } else {
                 let hashPasswordFromBcrypt = await hashUserPassword(data.password);
-            await db.User.create({
-                email: data.email,
-                password: hashPasswordFromBcrypt,
-                firstName: data.firstName,
-                lastName: data.lastName,
-                address: data.address,
-                phoneNumber: data.phonenumber,
-                gender: data.gender ,
-                roleId: data.roleId,
-                positionId: data.positionId
-            })
-                
+                await db.User.create({
+                    email: data.email,
+                    password: hashPasswordFromBcrypt,
+                    firstName: data.firstName,
+                    lastName: data.lastName,
+                    address: data.address,
+                    phoneNumber: data.phonenumber,
+                    gender: data.gender,
+                    roleId: data.roleId,
+                    positionId: data.positionId,
+                    image: data.avatar
+                })
+
             }
-            
+
             resolve({
                 errCode: 0,
                 message: 'OK'
@@ -192,10 +193,13 @@ let updateUserData = (data) => {
                 user.firstName = data.firstName;
                 user.lastName = data.lastName;
                 user.address = data.address;
-                user.phonenumber = data.phoneNumber;
-                user.roleId =data.roleId;
-                user.positionId =data.positionId;
-                user.gender =data.gender;
+                user.roleId = data.roleId;
+                user.positionId = data.positionId;
+                user.gender = data.gender;
+                user.phoneNumber = data.phoneNumber;
+                if (data.avatar) {
+                    user.image = data.avatar
+                }
 
 
                 await user.save();
@@ -214,31 +218,31 @@ let updateUserData = (data) => {
         }
     })
 }
-let getAllCodeService =(typeInput) =>{
-    return new Promise(async(resolve,reject)=>{
+let getAllCodeService = (typeInput) => {
+    return new Promise(async (resolve, reject) => {
         try {
             if (!typeInput) {
                 resolve({
                     errCode: 1,
-                    errMessage:'Missing required paramaters !'
+                    errMessage: 'Missing required paramaters !'
                 })
             } else {
                 let res = {};
                 let allcode = await db.Allcode.findAll({
-                    where:{type: typeInput}
+                    where: { type: typeInput }
                 });
-                       
-                res.errCode =0;
+
+                res.errCode = 0;
                 res.data = allcode;
                 resolve(res);
 
             }
-          
-          
-            
+
+
+
         } catch (e) {
             reject(e);
-            
+
         }
     })
 }
