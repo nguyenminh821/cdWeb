@@ -22,57 +22,42 @@
         "child6": "Dental examination",
         "search": "Find a medical specialist"
     },
-    
     "menu": {
-         
         "admin": {
             "manage-user": "Users System",
-            "manage-doctor": "Manage doctors",          
+            "manage-doctor": "Manage doctors",
             "manage-admin": "Manage admins",
-            "crud": "CRUD user",         
-            "crud-redux": "CRUD Redux",          
+            "crud": "CRUD user",
+            "crud-redux": "CRUD Redux",
             "clinic": "Clinics",
-             "manage-clinic": "Manage clinics",        
+            "manage-clinic": "Manage clinics",
             "specialty": "Specialties",
-             "manage-specialty": "Manage specialties",       
-            "handbook": "Handbook", 
+            "manage-specialty": "Manage specialties",
+            "handbook": "Handbook",
             "manage-handbook": "Manage handbook"
-
+        },
+        "doctor": {
+            "manage-schedule": "Manage Doctor's schedule"
         }
     },
-    "manage-user":{
-        "title":" User Manager ",
-    "add": "Add a new user",
-
-    "email": "Email",
-    
-    "password": "Password",
-    
-    "first-name": "First name",
-    
-    "last-name": "Last name",
-    
-    "phone-number": "Phone number",
-    
-    "address": "Address",
-    
-    "gender": "Gender",
-    
-    "position": "Position",
-    
-    "role": "Role",
-    "image": "Avatar",
-    
-    "save": "Save user",
-    "edit" :"Edit user"
-
-},
-"homepage":{
-    "outstanding-doctor":"Last week's featured doctor",
-    "more-infor":"More Infor"
-}
-
-
-
-
+    "manage-user": {
+        "title": " User Manager ",
+        "add": "Add a new user",
+        "email": "Email",
+        "password": "Password",
+        "first-name": "First name",
+        "last-name": "Last name",
+        "phone-number": "Phone number",
+        "address": "Address",
+        "gender": "Gender",
+        "position": "Position",
+        "role": "Role",
+        "image": "Avatar",
+        "save": "Save user",
+        "edit": "Edit user"
+    },
+    "homepage": {
+        "outstanding-doctor": "Last week's featured doctor",
+        "more-infor": "More Infor"
+    }
 }
