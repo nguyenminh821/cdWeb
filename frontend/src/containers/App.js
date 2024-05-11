@@ -14,6 +14,8 @@ import System from '../routes/System';
 import { CustomToastCloseButton } from '../components/CustomToast';
 import HomePage from './HomePage/HomePage';
 import CustomScrollbars from '../components/CustomScrollbars';
+import { saveDetailDoctor } from '../store/actions';
+import DetailDoctor from './Patient/Doctor/DetailDoctor';
 
 class App extends Component {
 
@@ -40,7 +42,7 @@ class App extends Component {
             <Fragment>
                 <Router history={history}>
                     <div className="main-container">
-                       
+
                         <div className="content-container">
                             <CustomScrollbars style={{ height: '100vh', width: '100%' }}>
                                 <Switch>
@@ -48,11 +50,11 @@ class App extends Component {
                                     <Route path={path.LOGIN} component={userIsNotAuthenticated(Login)} />
                                     <Route path={path.SYSTEM} component={userIsAuthenticated(System)} />
                                     <Route path={path.HOMEPAGE} component={HomePage} />
-
+                                    <Route path={path.DETAIL_DOCTOR} component={DetailDoctor} />
                                 </Switch>
                             </CustomScrollbars>
                         </div>
-{/* 
+                        {/* 
                         <ToastContainer
                             className="toast-container" toastClassName="toast-item" bodyClassName="toast-item-body"
                             autoClose={false} hideProgressBar={true} pauseOnHover={false}
@@ -61,23 +63,23 @@ class App extends Component {
                         /> */}
                         <ToastContainer
 
-                        position="bottom-right"
+                            position="bottom-right"
 
-                        autoClose={2000}
+                            autoClose={2000}
 
-                        hideProgressBar={false}
+                            hideProgressBar={false}
 
-                        newestOnTop={false}
+                            newestOnTop={false}
 
-                        closeOnclick
+                            closeOnclick
 
-                        rtl={false}
+                            rtl={false}
 
-                        pauseOnFocusLoss
+                            pauseOnFocusLoss
 
-                        draggable
+                            draggable
 
-                        pauseOnHover
+                            pauseOnHover
                         />
 
 
