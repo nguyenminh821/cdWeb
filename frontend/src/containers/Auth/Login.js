@@ -33,7 +33,7 @@ class Login extends Component {
     })
 
     try {
-       let data = await handleLoginApi(this.state.username, this.state.password);
+      let data = await handleLoginApi(this.state.username, this.state.password);
       if (data && data.errCode !== 0) {
         this.setState({
           errMessage: data.message
@@ -44,17 +44,17 @@ class Login extends Component {
         console.log('login succeeds');
       }
     } catch (error) {
-      if(error.response) {
-        if (error.response.data){
+      if (error.response) {
+        if (error.response.data) {
           this.setState({
             errMessage: error.response.data.message
-        })
+          })
         }
       }
       console.log('test', error.response);
-          
-            
-        
+
+
+
     }
   }
 
@@ -71,7 +71,7 @@ class Login extends Component {
         <div className="login-container">
           <div className="login-content row">
             <div className="col-12 text-login">Login</div>
-            <div className=".col-12 form-group login-input">
+            <div className="col-12 form-group login-input">
               <label>Username</label>
               <input type="text" className="form-control"
                 placeholder="Enter your username"
@@ -80,10 +80,9 @@ class Login extends Component {
               />
             </div>
 
-            <div className=".col-12 form-group login-input">
-              <label>Password:</label>
+            <div className="col-12 form-group login-input">
+              <label>Password</label>
               <div className="custom-input-password">
-
                 <input className="form-control"
                   type={this.state.isShowPassword ? 'text' : 'password'}
                   placeholder="Enter your password"
