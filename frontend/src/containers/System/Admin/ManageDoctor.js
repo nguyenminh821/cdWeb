@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import './TableManageUser.scss';
-import * as actions from "../../../store/actions"
+import * as actions from "../../../store/actions";
 import MarkdownIt from 'markdown-it';
 import MdEditor from 'react-markdown-editor-lite';
 import 'react-markdown-editor-lite/lib/index.css';
@@ -143,7 +143,6 @@ class ManageDoctor extends Component {
                             value={this.state.selectedOption}
                             onChange={this.handleChangSelect}
                             options={this.state.listDoctors}
-                        //className="form-control"
                         />
 
                     </div>
@@ -191,7 +190,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         //fetchUserRedux: () => dispatch(actions.fetchAllUsersStart()),
-        fetchAllDoctors: (id) => dispatch(actions.fetchAllDoctors()),
+        fetchAllDoctors: () => dispatch(actions.fetchAllDoctors()),
         saveDetailDoctor: (data) => dispatch(actions.saveDetailDoctor(data))
     };
 };
