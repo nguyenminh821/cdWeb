@@ -1,7 +1,8 @@
 import { where } from "sequelize";
 import db from "../models/index";
 require('dotenv').config();
-import _, { reject } from 'lodash';
+import _, { intersection, reject, update } from 'lodash';
+import { raw } from "body-parser";
 
 const MAX_NUMBER_SCHEDULE = process.env.MAX_NUMBER_SCHEDULE;
 
@@ -63,13 +64,22 @@ let getAllDoctors = () => {
 let saveDetailInforDoctor = (inputData) => {
     return new Promise(async (resolve, reject) => {
         try {
+           
+
             if (!inputData.doctorId || !inputData.contentHTML
-                || !inputData.contentMarkdown || !inputData.action) {
+                || !inputData.contentMarkdown  || !inputData.action 
+                || !inputData.selectedPrice    || !inputData.selectedPayment
+                || !inputData.selectedProvince || !inputData.nameClinic
+                || !inputData.addressClinic    || !inputData.note
+            
+            
+            ) {
                 resolve({
                     errCode: 1,
                     errMessage: 'Mising parameter'
                 })
             } else {
+                //upsert to markdown table
                 if (inputData.action === 'CREATE') {
                     await db.Markdown.create({
                         contentHTML: inputData.contentHTML,
@@ -86,10 +96,50 @@ let saveDetailInforDoctor = (inputData) => {
                         doctorMarkdown.contentHTML = inputData.contentHTML;
                         doctorMarkdown.contentMarkdown = inputData.contentMarkdown;
                         doctorMarkdown.description = inputData.description;
+                        doctorMarkdown.updateAt =new Date();
+                        await doctorMarkdown.save()
                     }
-                    await doctorMarkdown.save()
+                    
                 }
+                //upsert to Doctor_infor table
+                let doctorInfor = await db.Doctor_Infor.findOne({
+                    where: {
+                        doctorId : inputData.doctorId,
+                       
+                    },
+                    raw: false
+                 })
+                // || !inputData.selectedPrice    || !inputData.selectedPayment
+                // || !inputData.selectedProvince || !inputData.nameClinic
+                // || !inputData.addressClinic    || !inputData.note
+                
+                if (doctorInfor) {
+                    //update
+                    doctorInfor.doctorId = inputData.doctorId;
+                    doctorInfor.priceId = inputData.priceId;
+                    doctorInfor.provinceId = inputData.provinceId;
+                    doctorInfor.paymentId	 = inputData.paymentId	;
 
+                    doctorInfor.nameClinic = inputData.nameClinic;
+                    doctorInfor.addressClinic = inputData.addressClinic;
+                    doctorInfor.note	 = inputData.note	;
+                   // doctorInfor.updateAt =new Date();
+                    
+                   
+                   await doctorInfor.save()
+                }else{
+                    //create
+                    await db.Doctor_Infor.create({
+                    doctorId: inputData.doctorId,
+                    priceId :inputData.selectedPrice,
+                    provinceId :inputData.selectedProvince,
+                    paymentId	 :inputData.selectedPayment	,
+
+                    nameClinic :inputData.nameClinic,
+                    addressClinic :inputData.addressClinic,
+                    note	 :inputData.note	,
+                    })
+                }
                 resolve({
                     errCode: 0,
                     errMessage: 'Save infor doctor succeed'
