@@ -72,7 +72,16 @@
             "no-schedule": "Không có lịch khám cho ngày này. Hãy chọn ngày khám khác. Xin cảm ơn!",
             "choose": "Chọn ",
             "book-free": " và đặt (miễn phí)"
+        },
+        "extra-infor-doctor":{
+            "text-address":"ĐIA CHỈ PHÒNG KHÁM",
+            "price":"GIÁ KHÁM",
+            "detail":"xem chi tiết",
+            "payment":"người bệnh có thể thanh toán bằng: ",
+            "hide-price":"Ẩn bảng giá"
         }
+        
+        
     },
     "admin":{
         "manage-doctor":{
