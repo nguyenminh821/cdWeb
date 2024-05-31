@@ -5,6 +5,7 @@ Website Đặt lịch khám bệnh với Bác sĩ
 I. Tổng quan
 
 Đồ án này nhằm xây dựng một website cho phép người dùng đặt lịch khám bệnh với các bác sĩ. Website sẽ cung cấp danh sách các bác sĩ và thông tin chi tiết về chuyên môn của họ. Người dùng có thể chọn bác sĩ, xem lịch trình khám bệnh của bác sĩ và đặt lịch khám theo thời gian phù hợp.
+
 II. Chức năng
 
 1. Đăng nhập và Đăng ký:
@@ -24,11 +25,13 @@ II. Chức năng
 4. Quản lý lịch khám:
    - Người dùng có thể xem và quản lý các lịch khám bệnh đã đặt.
    - Người dùng có thể hủy lịch khám nếu cần thiết.
+   
 III. Công nghệ sử dụng
 
 - Front-end: Reactjs + HTML/CSS-scss/Bootstrap4 (reactrap)
 - Back-end: Node.js (Express)
 - Cơ sở dữ liệu: MySql (Sequelize)
+
 IV. Giao diện và trải nghiệm người dùng
 
 - Giao diện người dùng nên được thiết kế đơn giản, dễ sử dụng và thân thiện.
