@@ -74,6 +74,31 @@
             "no-schedule": "There are no appointments available for this date. Please choose a different appointment date. Thank you!",
             "choose": "Choose ",
             "book-free": " and book (free)"
+        },
+        "extra-infor-doctor":{
+            "text-address":"Address of the examination",
+            "price":"Examination price",
+            "detail":"See detail",
+            "payment":"the patient can pay the cost in the form of: ",
+            "hide-price":"hide price list"
+        }
+        
+    },
+    "admin":{
+        "manage-doctor":{
+            
+            
+            "title": "Tạo thêm thông tin doctors",
+            "select-doctor":"select doctor",
+            "intro":"introduction:",
+            "add":"Create infor",
+            "save":"Save Infor",
+            "price":"Price",
+            "payment":"Payment",
+            "province":"Province",
+            "nameClinic":"nameClinic",
+            "addressClinic":"addressClinic",
+            "note":"note"
         }
     }
 }
