@@ -46,7 +46,7 @@ class DoctorExtraInfor extends Component {
        let {isShowDetailInfor, extraInfor} =this.state;
        let {language} =this.props;
 
-        console.log("check state",this.state)
+        //console.log("check state",this.state)
        return (
             <div className="doctor-extra-infor-container">
                <div className="content-up">
@@ -133,10 +133,11 @@ class DoctorExtraInfor extends Component {
                     <div className="payment">
                     <FormattedMessage id="patient.extra-infor-doctor.payment"/>
                         {extraInfor && extraInfor.paymentTypeData && language === LANGUAGES.VI
-                        ? extraInfor.paymentTypeData.valueVi: ''}
+                        ? 
+                        extraInfor.paymentTypeData.valueVi : ''}
 
                         {extraInfor && extraInfor.paymentTypeData && language === LANGUAGES.EN
-                        ? extraInfor.paymentTypeData.valueEn: ''}
+                        ? extraInfor.paymentTypeData.valueEn : ''}
 
 
                     </div>

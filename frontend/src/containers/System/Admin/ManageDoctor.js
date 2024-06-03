@@ -183,7 +183,7 @@ class ManageDoctor extends Component {
             let markdown = res.data.Markdown;
             let addressClinic = '',nameClinic ='', note ='',
             paymentId ='',priceId ='',provinceId ='',
-            selectedPayment='',selectedPrice='',selectedProvince=''
+            selectedPayment ='',selectedPrice ='',selectedProvince = ''
             ;
             
             
@@ -192,16 +192,16 @@ class ManageDoctor extends Component {
                 nameClinic = res.data.Doctor_Infor.nameClinic;
                 note = res.data.Doctor_Infor.note;
                 
-                paymentId =res.data.Doctor_Infor.paymentId;
-                priceId =res.data.Doctor_Infor.priceId;
-                provinceId =res.data.Doctor_Infor.provinceId;
-                 selectedPayment =listPayment.find(item =>{
+                paymentId = res.data.Doctor_Infor.paymentId;
+                priceId = res.data.Doctor_Infor.priceId;
+                provinceId = res.data.Doctor_Infor.provinceId;
+                 selectedPayment = listPayment.find(item =>{
                     return item && item.value === paymentId
                   })
-                   selectedPrice =listPrice.find(item =>{
+                   selectedPrice = listPrice.find(item =>{
                     return item && item.value === priceId
                   })
-                   selectedProvince =listProvince.find(item =>{
+                   selectedProvince = listProvince.find(item =>{
                     return item && item.value === provinceId
                   })    
                  // console.log(' ffind',findItem,listPayment)
@@ -234,7 +234,7 @@ class ManageDoctor extends Component {
                 note: ''
             })
         }
-        console.log('test', res)
+       // console.log('test', res)
 
     };
     handleChangSelectDoctorInfor =async (selectedOption, name) =>{
@@ -259,7 +259,7 @@ class ManageDoctor extends Component {
 
     render() {
         let { hasOldData } = this.state;
-        console.log('cgfg',this.state)
+        //console.log('cgfg',this.state)
         
        
         return (
