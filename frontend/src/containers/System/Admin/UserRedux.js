@@ -147,10 +147,7 @@ class UserRedux extends Component {
             })
 
         }
-        //let objectUrl =URL.createObjectURL(file);
 
-
-        //console.log('checl file 0',objectUrl)
     }
 
 
