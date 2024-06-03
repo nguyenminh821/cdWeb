@@ -1,7 +1,7 @@
 import { where } from "sequelize";
 import db from "../models/index";
 require('dotenv').config();
-import _, { intersection, reject, update } from 'lodash';
+import _ from 'lodash';
 import { raw } from "body-parser";
 
 const MAX_NUMBER_SCHEDULE = process.env.MAX_NUMBER_SCHEDULE;
@@ -66,11 +66,12 @@ let saveDetailInforDoctor = (inputData) => {
         try {
            
 
-            if (!inputData.doctorId || !inputData.contentHTML
+            if (!inputData.doctorId 
+                || !inputData.contentHTML
                 || !inputData.contentMarkdown  || !inputData.action 
-                || !inputData.selectedPrice    || !inputData.selectedPayment
+                || !inputData.selectedPrice  || !inputData.selectedPayment
                 || !inputData.selectedProvince || !inputData.nameClinic
-                || !inputData.addressClinic    || !inputData.note
+                || !inputData.addressClinic || !inputData.note
             
             
             ) {
@@ -116,9 +117,9 @@ let saveDetailInforDoctor = (inputData) => {
                 if (doctorInfor) {
                     //update
                     doctorInfor.doctorId = inputData.doctorId;
-                    doctorInfor.priceId = inputData.priceId;
-                    doctorInfor.provinceId = inputData.provinceId;
-                    doctorInfor.paymentId	 = inputData.paymentId	;
+                    doctorInfor.priceId = inputData.selectedPrice;
+                    doctorInfor.provinceId = inputData.selectedProvince;
+                    doctorInfor.paymentId	 = inputData.selectedPayment	;
 
                     doctorInfor.nameClinic = inputData.nameClinic;
                     doctorInfor.addressClinic = inputData.addressClinic;
