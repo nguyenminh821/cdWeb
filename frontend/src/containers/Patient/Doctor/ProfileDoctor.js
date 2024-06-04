@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from "react-redux";
 import { FormattedMessage } from 'react-intl';
-
-class DefauftClass extends Component {
+import './ProfileDoctor.scss';
+class ProfileDoctor extends Component {
 
     constructor(props) {
         super(props);
@@ -25,7 +25,7 @@ class DefauftClass extends Component {
      
        return (
            <div>
-
+            hello from profile
            </div>
         );
     }
@@ -43,4 +43,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DefauftClass);
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileDoctor);
