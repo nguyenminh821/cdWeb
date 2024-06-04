@@ -91,6 +91,6 @@ export {
   saveBulkScheduleDoctor,
   getScheduleDoctorByDate,
   createNewSpecialty,
-  getAllSpecialty
+  getAllSpecialty,
   getExtraInforDoctorById
 }

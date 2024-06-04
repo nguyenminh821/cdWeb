@@ -90,7 +90,7 @@ class DoctorSchedule extends Component {
                     allAvalableTime: res.data ? res.data : []
                 })
             }
-            console.log('res: ', res)
+            //console.log('res: ', res)
         }
 
     }
