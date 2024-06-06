@@ -7,12 +7,14 @@
 
     .content-left {
        // width: 20%;
-        background: center center no-repeat;
+        //background: center center no-repeat;
         width: 80px;
         height: 80px;
         border-radius: 50%;
        // margin: 10px 20px;
-
+       background-size: cover;
+       background-repeat: no-repeat;
+       background-position: center;
     }
 
     .content-right {
