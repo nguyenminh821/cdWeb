@@ -2,7 +2,7 @@ import { raw } from "body-parser";
 import db from "../models/index";
 import { times } from "lodash";
 require('dotenv').config();
-
+import emailService from './emailServices'
 let postBookAppoinment =(data)=>{
     return new  Promise(async(resolve,reject)=>{
         try {
@@ -12,6 +12,17 @@ let postBookAppoinment =(data)=>{
                     errMessage: 'Mising parameter'
                 })
             }else{
+                await emailService.sendSimpleEmail({
+                    reciverEmail:data.email,
+                    patientName: 'triet',
+                    
+                     time:'8:00 9:00 chủ nhạt 1/8/2000',
+                     doctorName:'Thảo',
+                     redirectLink:'https://github.com/nguyenminh821/cdWeb'
+                })
+
+
+
                 //upsert patient
              let user =  await db.User.findOrCreate({
                     where: { email: data.email },
