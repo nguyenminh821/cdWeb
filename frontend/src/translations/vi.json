@@ -96,6 +96,12 @@
             "freeappointment":"Miễn phí đặt lịch"
 
             
+        },
+        "verify":{
+            "check":"Xác Nhận đặt lịch thành công",
+            "checksuceed":"Xác Nhận đặt lịch thành công",
+            "checkerr":"lịch hẹn không tồn tại hoặc đặt lịch không thành công"
+            
         }
         
         
