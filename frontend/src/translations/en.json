@@ -97,6 +97,12 @@
             "freeappointment":"Free appointment"
 
             
+        },
+        "verify":{
+            "check":"Xác Nhận đặt lịch thành công",
+            "checksuceed":"Confirmation of successful booking",
+            "checkerr":"The appointment schedule does not exist or the appointment failed"
+            
         }
         
     },
