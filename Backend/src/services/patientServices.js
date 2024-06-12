@@ -6,18 +6,25 @@ import emailService from './emailServices'
 let postBookAppoinment =(data)=>{
     return new  Promise(async(resolve,reject)=>{
         try {
-            if(!data.email || !data.doctorId || !data.timeType || !data.date){
+            if(!data.email || !data.doctorId || !data.timeType || !data.date
+
+
+                || !data.fullName
+            ){
                 resolve({
                     errCode: 1,
                     errMessage: 'Mising parameter'
                 })
             }else{
+                   
+
                 await emailService.sendSimpleEmail({
                     reciverEmail:data.email,
-                    patientName: 'triet',
+                    patientName: data.fullName,
                     
-                     time:'8:00 9:00 chủ nhạt 1/8/2000',
-                     doctorName:'Thảo',
+                     time:data.timeString,
+                     doctorName:data.doctorName,
+                     language:data.language,
                      redirectLink:'https://github.com/nguyenminh821/cdWeb'
                 })
 
