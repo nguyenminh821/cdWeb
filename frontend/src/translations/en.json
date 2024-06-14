@@ -99,7 +99,7 @@
             
         },
         "verify":{
-            "check":"Xác Nhận đặt lịch thành công",
+            "check":"Confirm successful booking",
             "checksuceed":"Confirmation of successful booking",
             "checkerr":"The appointment schedule does not exist or the appointment failed"
             
@@ -110,17 +110,21 @@
         "manage-doctor":{
             
             
-            "title": "Tạo thêm thông tin doctors",
-            "select-doctor":"select doctor",
-            "intro":"introduction:",
+            "title": "CREATE INFORMATION DOCTORS",
+            "select-doctor":"Select doctor",
+            "intro":"Introduction:",
             "add":"Create infor",
             "save":"Save Infor",
             "price":"Price",
             "payment":"Payment",
             "province":"Province",
-            "nameClinic":"nameClinic",
-            "addressClinic":"addressClinic",
-            "note":"note"
+            "nameClinic":"Clinic's name",
+            "addressClinic":"Clinic's address",
+            "note":"Note",
+            "specialty": "Specialty",
+            "select-clinic": "Clinic"
+
+
         }
     }
 }
