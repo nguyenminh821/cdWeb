@@ -67,12 +67,7 @@ const saveBulkScheduleDoctor = (data) => {
 const getScheduleDoctorByDate = (doctorId, date) => {
   return axios.get(`/api/get-schedule-doctor-by-date?doctorId=${doctorId}&date=${date}`)
 }
-const createNewSpecialty = (data) => {
-  return axios.post('/api/create-new-specialty', data)
-}
-const getAllSpecialty = () => {
-  return axios.get(`/api/get-specialty`)
-}
+
 const getExtraInforDoctorById = (doctorId) => {
   return axios.get(`/api/get-extra-infor-doctor-by-id?doctorId=${doctorId}`)
 }
@@ -85,6 +80,17 @@ const postPatientBookAppointment = (data) => {
 }
 const postVerifyBookAppoinment = (data) => {
   return axios.post('/api/verify-book-appointment', data)
+}
+
+const createNewSpecialty = (data) => {
+  return axios.post('/api/create-new-specialty', data)
+}
+const getAllSpecialty = () => {
+  return axios.get(`/api/get-specialty`)
+}
+
+const getDetailSpecialtyById = (data) => {
+  return axios.get(`/api/get-detail-specialy-by-id?id=${data.id}&location=${data.location}`)
 }
 
 export {
@@ -105,5 +111,6 @@ export {
   getExtraInforDoctorById,
   getProfileDoctorById,
   postPatientBookAppointment,
-  postVerifyBookAppoinment
+  postVerifyBookAppoinment,
+  getDetailSpecialtyById
 }
