@@ -22,7 +22,8 @@ let postBookAppoinment =(data)=>{
             if(!data.email || !data.doctorId || !data.timeType || !data.date
 
 
-                || !data.fullName
+                || !data.fullName || !data.selectedGender
+                || !data.address
             ){
                 resolve({
                     errCode: 1,
@@ -49,7 +50,10 @@ let postBookAppoinment =(data)=>{
                     where: { email: data.email },
                     defaults: {
                      email: data.email,
-                     roleId : 'R3'
+                     roleId: 'R3',
+                     gender: data.selectedGender,
+                     address: data.address,
+                     firstName: data.fullName 
                     },
                    // raw : true
                   });
