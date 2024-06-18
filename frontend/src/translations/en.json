@@ -37,7 +37,8 @@
             "manage-handbook": "Manage handbook"
         },
         "doctor": {
-            "manage-schedule": "Manage Doctor's schedule"
+            "manage-schedule": "Manage Doctor's schedule",
+            "manage-patient" : "Manage Doctor's patient"
         }
     },
     "manage-user": {
@@ -59,7 +60,8 @@
     "homepage": {
         "outstanding-doctor": "Last week's featured doctor",
         "more-infor": "More Infor",
-        "specialty-popular": "Popular specialties"
+        "specialty-popular": "Popular specialties",
+        "medical-facility": "Medical facilities"
 
     },
     "manage-schedule": {
@@ -73,7 +75,8 @@
             "schedule": "Schedule",
             "no-schedule": "There are no appointments available for this date. Please choose a different appointment date. Thank you!",
             "choose": "Choose ",
-            "book-free": " and book (free)"
+            "book-free": " and book (free)",
+            "more-infor": "More Infor"
         },
         "extra-infor-doctor":{
             "text-address":"Address of the examination",

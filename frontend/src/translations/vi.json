@@ -37,7 +37,8 @@
             "manage-handbook": "Quản lí cẩm nang"
         },
         "doctor": {
-            "manage-schedule": "Quản lý kế hoạch khám bệnh"
+            "manage-schedule": "Quản lý kế hoạch khám bệnh",
+            "manage-patient" : "Quản lý bệnh nhân khám bệnh"
         }
     },
     "manage-user": {
@@ -59,7 +60,8 @@
     "homepage": {
         "outstanding-doctor": "Bác sĩ nổi bật tuần qua",
         "more-infor": "Xem thêm",
-        "specialty-popular": "Chuyên khoa phổ biến"
+        "specialty-popular": "Chuyên khoa phổ biến",
+        "medical-facility": "Cơ sở y tế nổi bật"
     },
     "manage-schedule": {
         "title": "Quản lý kế hoạch khám bệnh của bác sĩ",
@@ -72,7 +74,8 @@
             "schedule": "Lịch khám",
             "no-schedule": "Không có lịch khám cho ngày này. Hãy chọn ngày khám khác. Xin cảm ơn!",
             "choose": "Chọn ",
-            "book-free": " và đặt (miễn phí)"
+            "book-free": " và đặt (miễn phí)",
+            "more-infor": "Xem thêm"
         },
         "extra-infor-doctor":{
             "text-address":"ĐIA CHỈ PHÒNG KHÁM",

@@ -29,7 +29,10 @@
                 // }
 
                 &.section-medical-facility {
-                    background-image: url(../../assets/medical-facility/benh-vien-thu-cuc.jpg);
+                    // background-image: url(../../assets/medical-facility/benh-vien-thu-cuc.jpg);
+                    background-size: cover;
+                    // background-repeat: no-repeat
+                   
                 }
 
                 &.section-outstanding-doctor {
