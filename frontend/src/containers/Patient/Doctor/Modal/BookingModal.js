@@ -12,6 +12,9 @@ import Select from 'react-select';
 import {postPatientBookAppointment} from '../../../../services/userService';
 import { toast } from 'react-toastify';
 import moment from 'moment';
+import LoadingOverlay from 'react-loading-overlay';
+
+
 class BookingModal extends Component {
 
     constructor(props) {
@@ -26,7 +29,8 @@ class BookingModal extends Component {
             selectedGender:'',
            doctorId:'',
            genders:'',
-           timeType:''
+           timeType:'',
+           isShowLoading: false
         }
     }
     async componentDidMount() {
@@ -133,19 +137,24 @@ buildDoctorName  =(dataTime)=>{
 }
  
 
-handleConfirmBooking =async()=>{
+handleConfirmBooking = async()=>{
     //validate input
     let date =new Date(this.state.birthday).getTime();
     let timeString =this.buildTimeBooking(this.props.dataTime)
     let doctorName =this.buildDoctorName(this.props.dataTime);
+
+    this.setState({
+        isShowLoading: true
+    })
     let res =await postPatientBookAppointment({
         fullName: this.state.fullName,
         phoneNumber:this.state.phoneNumber,
         email:this.state.email,
         address:this.state.address,
         reason:this.state.reason,
-        date:date,
-         selectedGender:this.state.selectedGender.value,
+        date: this.props.dataTime.date,
+        birthday: date,
+        selectedGender:this.state.selectedGender.value,
         doctorId:this.state.doctorId,
         timeType: this.state.timeType,
         language:this.props.language,
@@ -155,9 +164,15 @@ handleConfirmBooking =async()=>{
 
     })
     if (res && res.errCode === 0) {
+        this.setState({
+            isShowLoading: false
+        })
         toast.success('Booking a new appoiment succeed!')
         this.props.closeBookingClose();
     }else{
+        this.setState({
+            isShowLoading: false
+        })
         toast.error('Booking a new appoiment error!')
     }
 
@@ -176,6 +191,12 @@ handleConfirmBooking =async()=>{
    // console.log('data time ',dataTime)
    //console.log('inside booking',this.state)
        return (
+        <>
+        <LoadingOverlay
+           active={this.state.isShowLoading}
+           spinner
+           text='Loading...'
+           >
         <Modal 
         isOpen={isOpenModal}
         className={'booking-modal-container'}
@@ -307,7 +328,9 @@ handleConfirmBooking =async()=>{
 
 
          
-        </Modal>   
+        </Modal>
+        </LoadingOverlay>
+        </>   
         );
     }
 }
