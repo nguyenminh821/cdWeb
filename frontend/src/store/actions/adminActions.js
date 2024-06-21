@@ -129,6 +129,7 @@ export const createNewUser = (data) => {
                 dispatch(fetchAllUsersStart());
             } else {
                 dispatch(saveUserFailded());
+                toast.error("Duplicate mail");
 
             }
 
@@ -150,7 +151,7 @@ export const saveUserSuccess = () => ({
 })
 
 export const saveUserFailded = () => ({
-    type: actionTypes.CREATE_USER_FAILDED
+    type: actionTypes.CREATE_USER_FAILED
 })
 
 

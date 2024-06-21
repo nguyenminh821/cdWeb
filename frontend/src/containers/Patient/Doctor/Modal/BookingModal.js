@@ -143,6 +143,28 @@ handleConfirmBooking = async()=>{
     let timeString =this.buildTimeBooking(this.props.dataTime)
     let doctorName =this.buildDoctorName(this.props.dataTime);
 
+    let regx =  /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        
+        if(!regx.test(this.state.email)){
+            toast.error("Please enter a valid email address");
+            return false;
+        }
+
+       
+       // let kteamil =this.state.email;
+       let myPhoneRegex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/g;
+        if (!myPhoneRegex.test(this.state.phoneNumber)) {
+    // Successful match
+           
+
+    // Match attempt failed
+    toast.error("Please enter a vaid phone number");
+    return false;
+
+}
+
+
+
     this.setState({
         isShowLoading: true
     })
