@@ -20,7 +20,7 @@ const transporter = nodemailer.createTransport({
 });
 
 let info = await transporter.sendMail({
-    from: '"BookingCare 👻" <19130245@st.hcmuaf.edu.vn>', // sender address
+    from: '"BookingCare 👻" <19130210@st.hcmuaf.edu.vn>', // sender address
     to: dataSend.reciverEmail, // list of receivers
     subject: "Thông tin đặt lịch khám bệnh", // Subject line
     //text: "xin chao pe iu cua anh hihi", // plain text body

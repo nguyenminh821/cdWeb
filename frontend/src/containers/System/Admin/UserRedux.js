@@ -9,6 +9,7 @@ import './UserRedux.scss';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import TableManageUser from './TableManageUser';
+import { toast } from "react-toastify";
 class UserRedux extends Component {
 
     // state = {
@@ -210,6 +211,35 @@ class UserRedux extends Component {
 
     }
     checkValidateInput = () => {
+
+        let regx =  /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        
+        if(!regx.test(this.state.email)){
+            toast.error("Please enter a valid email address");
+            return false;
+        }
+
+       
+       // let kteamil =this.state.email;
+       let myPhoneRegex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/g;
+        if (!myPhoneRegex.test(this.state.phoneNumber)) {
+    // Successful match
+           
+
+    // Match attempt failed
+    toast.error("Please enter a vaid phone number");
+    return false;
+
+}
+// Bao gồm cả chữ hoa, chữ thường, số, ký tự đặc biệt và ít nhất 8 kỹ tự
+let passwordRegex =/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/;
+if(!passwordRegex.test(this.state.password)){
+    toast.error("The pass word must least 8 character");
+    return false;
+
+}
+
+
         let isValid = true;
         let arrCheck = ['email', 'password', 'firstName', 'lastName',
             'phoneNumber', 'address']
@@ -265,6 +295,9 @@ class UserRedux extends Component {
 
     render() {
         //console.log('hoi fdf',this.state)
+
+        
+        
         let genders = this.state.genderArr;
         let roles = this.state.roleArr;
         let positions = this.state.positionArr;
